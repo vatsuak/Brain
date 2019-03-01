@@ -8,6 +8,7 @@ from random import randint
 import numpy as np
 import scipy.stats as st
 from skimage.color import rgb2gray
+import sys
 
 def findCentroid(path):
     img =cv2.imread(path,0)
@@ -26,24 +27,20 @@ def findCentroid(path):
     return (rect[0][0]/w,rect[0][1]/h)
 
 def main():
-    f = open('./find_phone/labels.txt', 'r') 
-    path = './find_phone/'
+    path = sys.argv[1]+'/'
+    f = open(path+'labels.txt', 'r') 
     i = 0
+    total = 0
     for x in f:
+        total+=1
         val = x.split()
         p = path+val[0]
         (x,y) = findCentroid(p)
         ax, ay = (float)(val[1]), (float)(val[2])
         if ((pow(x-ax,2)+pow(y-ay,2))<0.0025):
-            # print(1)
             i+=1
-        # else:
-        #     print(0) 
     f.close()
-    print(i)
+    print('Accuracy with the given dataset: {:2.2%}'.format(i/total))
 
 if __name__ == '__main__':
     main()
-        
-
-
