@@ -13,8 +13,6 @@ import sys
 def findCentroid(path):
     img =cv2.imread(path,0)
     h ,w = np.shape(img)
-    
-    #img = cv2.equalizeHist(img)
     img = cv2.blur(img,(8,8))
     _,thresh2 = cv2.threshold(img,60,255,cv2.THRESH_BINARY_INV)
     _,contours,_ = cv2.findContours(thresh2, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
