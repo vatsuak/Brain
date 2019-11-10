@@ -11,8 +11,9 @@ There are overall two files that are used to complete the task.
   file takes in the path of the dataset as the command line input and prints out the
   accuracy of the method used to detect the object on the given dataset.
   Here is what a terminal command will look like when running the file:
+            ```
             $ python train_phone_finder.py ~/find_phone 
-
+            ```
  
   The dataset folder provided to the input may contain any number of image files and must 
   contain an annotated .txt file with the name 'labels.txt'. The annotation must be done in
