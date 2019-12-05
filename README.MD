@@ -1,16 +1,17 @@
-OBJECTIVE	
+## OBJECTIVE	
 The purpose of this code is to determine the normalized coordinates of a cell phone
 in a given picture. 
 
-_____________________________File Description______________________________________
+##### File Description
 
 There are overall two files that are used to complete the task.
 
-1)train_phone_finder.py 
+1. train_phone_finder.py 
   This python file is used to validate the method used with the provided dataset. The 
   file takes in the path of the dataset as the command line input and prints out the
   accuracy of the method used to detect the object on the given dataset.
   Here is what a terminal command will look like when running the file:
+  
             ```
             $ python train_phone_finder.py ~/find_phone 
             ```
@@ -20,14 +21,14 @@ There are overall two files that are used to complete the task.
   the following fashion:
       <image_name> <x​ (coordinate of the phone)> ​<y​ (coordinate of the phone)>
 
-2)find_phone.py
+2. find_phone.py
   This file is used to find the normalized coordinate of a phone in a random image
   provided as the input. The file takes in a single image with a phone and displays the 
   location of the phone as two space separated float values(<=1).
 
 NOTE: NO EXCEPTION HANDLING HAS BEEN IMPLEMENTED
 
-_______________________________Discussion____________________________________________
+##### Discussion
 
 The method that has been used to detect the phone in the images is a very simple, crude 
 algorithm. In a few words:
@@ -57,7 +58,7 @@ The method essentially detects the black screen of the phone to draw the boundar
 any reflection off the screen. Therefore the testing data would work well if it adhered to the above 
 guidelines.
 
-IMPROVEMENTS: 
+##### IMPROVEMENTS: 
 The proposed method does not use any form of learning or state of the art algorithm 
 since the focus was kept to achieving a complete code with the minimum expected requirements. 
 However there could be many improvements that could be done over and above the specified method. Some of 
@@ -68,8 +69,8 @@ the methods that could be applied are listed as follows:
 2) A foreground-background separation technique that can facilitate the better detection of the phone.
 3) Apply techniques inspired form established ml processes, like face-detection and  modify it to something like a
   "phone detection" and be able to reduce the dimension of the area of interest,
-4) A particularly interesting technique that could be implemented is something called "CentroidNet", which claim to have 
-   better success rate than may state-of-the art methods( link: http://www.ecmlpkdd2018.org/wp-content/uploads/2018/09/116.pdf)
+4) A particularly interesting technique that could be implemented is something called ["CentroidNet"](http://www.ecmlpkdd2018.org/wp-content/uploads/2018/09/116.pdf), which claim to have 
+   better success rate than many state-of-the art methods
 5) The dataset could be extended and better labels could be provided. For example more variations in the illumination of
   the scenes. Also the labels for the angle of rotation of the principle axis of the phone could have been added.
 6) Transferred learning through some pre-trained networks 
