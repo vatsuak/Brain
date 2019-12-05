@@ -11,14 +11,13 @@ There are overall two files that are used to complete the task.
   file takes in the path of the dataset as the command line input and prints out the
   accuracy of the method used to detect the object on the given dataset.
   Here is what a terminal command will look like when running the file:
-  
-            ```
-            $ python train_phone_finder.py ~/find_phone 
-            ```
- 
+  ```
+  $ python train_phone_finder.py ~/find_phone
+  ```
   The dataset folder provided to the input may contain any number of image files and must 
   contain an annotated .txt file with the name 'labels.txt'. The annotation must be done in
   the following fashion:
+  
       <image_name> <x​ (coordinate of the phone)> ​<y​ (coordinate of the phone)>
 
 2. find_phone.py
@@ -34,10 +33,14 @@ The method that has been used to detect the phone in the images is a very simple
 algorithm. In a few words:
 
 Step 1. Convert the image into binary using global thresholding methods,
+
 Step 2. Draw 2D bounding boxes around the areas of interest(the contours separated out through 
         the binary conversion) in the binary image and "hope" that it is the phone,
+        
 Step 3. Record the centroid of the bounding box that has been so drawn
+
 Step 4. Normalize the so obtained centroid with the dimension of the image
+
 Step 5. Report the normalized centroid
 
 Preprocessing: A gaussian smoothing filter has been applied to the image before converting it to
@@ -80,7 +83,7 @@ framework to build better and complex pipelines. This is definitely a naive or b
 bare-minimum baseline and can be infinitely improved on, using maybe one of the above techniques. 
 
 
-------------------------------------------------End------------------------------------------------------------------------
+
 
 
 
